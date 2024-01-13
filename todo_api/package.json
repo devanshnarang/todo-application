@@ -6,10 +6,10 @@
   "scripts": {
     "build": "babel src --out-dir dist",
     "dev": "nodemon --exec babel-node src/app.js",
-    "lint:check": "eslint src",
-    "lint:format": "eslint --fix src",
+    "lint:check": "eslint src tests",
+    "lint:format": "eslint --fix src tests",
     "start": "node dist/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest i"
   },
   "keywords": [
     "TODO",
@@ -23,9 +23,12 @@
     "@babel/core": "^7.23.7",
     "@babel/node": "^7.22.19",
     "@babel/preset-env": "^7.23.7",
+    "babel-jest": "^29.7.0",
     "eslint": "^8.56.0",
     "eslint-config-google": "^0.14.0",
-    "nodemon": "^3.0.2"
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.2",
+    "supertest": "^6.3.3"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
