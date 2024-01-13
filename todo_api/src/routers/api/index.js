@@ -1,7 +1,11 @@
 import {Router} from 'express';
+import accountsRouter from './accounts.router';
 import helloRouter from './hello.router';
 
-const urlPatterns = new Map([['/hello', helloRouter]]);
+const urlPatterns = new Map([
+  ['/accounts', accountsRouter],
+  ['/hello', helloRouter],
+]);
 
 // eslint-disable-next-line new-cap
 const apiRouter = Router();

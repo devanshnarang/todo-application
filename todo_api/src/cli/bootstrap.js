@@ -18,6 +18,7 @@ export function getRequestListener() {
   application.use(express.urlencoded({extended: true}));
   application.use(express.json());
   application.use(morgan('combined'));
+
   routers.forEach((router, path) => {
     application.use(path, router);
   });
@@ -34,7 +35,8 @@ export default async function bootstrap(port, host) {
   const options = {};
   const requestListener = getRequestListener();
   const server = new Server(options, requestListener);
-  //   await mongoose.connect(MONGODB_URI);
+
+  await mongoose.connect(MONGODB_URI);
   server.listen(port, host, () => {
     console.info(server.address());
   });
